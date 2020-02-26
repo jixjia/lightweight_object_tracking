@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # Arg parser
     parser = argparse.ArgumentParser(description='Specify path to video')
     parser.add_argument('-p', '--video_path', type=str,
-                        default='test_animation.mp4', help='Enter path to video file')
+                        default='videos/test_animation.mp4', help='Enter path to video file')
     args = parser.parse_args()
 
     # Load video
@@ -39,8 +39,7 @@ if __name__ == '__main__':
     frameNum = 0
     minArea = 1000
     maxArea = 50000
-    maxRadius = 25
-    scaleRatio = 1
+    scaleRatio = 0.8
     upperLinePos = int(height*scaleRatio*0.3)
     upperLineColor = (0, 255, 0)  # green
     lowerLinePos = int(height*scaleRatio*0.59)
@@ -183,10 +182,10 @@ if __name__ == '__main__':
                                         [contoursX[minIndex], contoursY[minIndex]], objId, prevCoords))
 
                                     # Get velocity of the object
-                                    s = np.abs(
-                                        contoursX[minIndex] - prevCoords[0]) + np.abs(contoursY[minIndex] - prevCoords[1]) * 7
+                                    velocity = np.abs(
+                                        contoursX[minIndex] - prevCoords[0]) + np.abs(contoursY[minIndex] - prevCoords[1]) * fps
 
-                                    cv2.putText(image, "(Speed: "+str(int(s))+" km/h)", (int(contoursX[minIndex]) + 10, int(
+                                    cv2.putText(image, "(Speed: "+str(int(velocity))+" km/h)", (int(contoursX[minIndex]) + 10, int(
                                         contoursY[minIndex]) + 10), cv2.FONT_HERSHEY_SIMPLEX, .6, (0, 0, 255), 2)
 
                                     # Get rid of allocated coords from contoursX/contoursY list
@@ -202,12 +201,12 @@ if __name__ == '__main__':
 
                     else:
                         print(
-                            "Previous frame is blank, registering every objects for tracking")
+                            "Registering objects for tracking")
                         for i in range(len(contoursX)):
                             registerNewObject(contoursX[i], contoursY[i])
 
             # 2.1 Display total object counts
-            cv2.rectangle(image, (0, 0), (240, 70), (162, 115, 0), -1)
+            cv2.rectangle(image, (0, 0), (160, 70), (162, 115, 0), -1)
             cv2.putText(image, "COUNTS: "+str(totalObjects), (10, 40),
                         cv2.FONT_HERSHEY_SIMPLEX, .6, (255, 255, 255), 1)
 
@@ -239,4 +238,4 @@ if __name__ == '__main__':
 
     # Save dataframe to csv file for analysis
     df.to_csv('tracking.csv', sep=',')
-    print("Program Finished!")
+    print("Program Finished! Saved tracking result to CSV")
