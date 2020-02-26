@@ -3,7 +3,8 @@
 This program demonstrates a solution for tracking objects without requiring to train an object detection model with Deep Learning. This solution is best suited to run on stationary cameras that that need to recognize and track moving objects. 
 
 ## Demo
-Click on image to see it in action
+Click on image to see it in action     
+
 [![DEMO](https://jixjiastorage.blob.core.windows.net/blog-resources/lightweight-object-tracking/featured.jpg)](https://youtu.be/k2qSYngrG-o)
 
 ## Algorithm
