@@ -1,6 +1,6 @@
 # A Lightweight Object Tracking method without Deep Learning
 
-This program demonstrates a solution for tracking objects without requiring to train an object detection model with Deep Learning. This solution is best suited to run on stationary cameras that that need to recognize and track moving objects. 
+This program demonstrates a solution for tracking objects without requiring to train an object detection model with Deep Learning. This solution is best suited to run on stationary camera that need to recognise and track moving objects.
 
 ## Demo
 Click on image to see it in action     
