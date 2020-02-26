@@ -4,7 +4,7 @@ This program demonstrates a solution for tracking objects without requiring to t
 
 ## Demo
 Click on image to see it in action
-![DEMO](https://jixjiastorage.blob.core.windows.net/blog-resources/lightweight-object-tracking/featured.jpg)](https://youtu.be/k2qSYngrG-o)
+[![DEMO](https://jixjiastorage.blob.core.windows.net/blog-resources/lightweight-object-tracking/featured.jpg)](https://youtu.be/k2qSYngrG-o)
 
 ## Algorithm
 
