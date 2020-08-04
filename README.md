@@ -9,4 +9,4 @@ Click on image to see it in action
 
 ## Algorithm
 
-If you are interested, read my [blog](https://jixjia.com/2020/02/27/lightweight-object-tracking/) for the full detail of this solution and its algorithm.
+If you are interested, read my [blog](https://jixjia.com/lightweight-object-tracking/) for the full detail of this solution and its algorithm.
